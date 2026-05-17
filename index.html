@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cultural Study Time - Versión Diamante Final</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Kalam:wght@400;700&family=Playfair+Display:ital,wght@1,600;1,700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --naranja-claro: #FF9800;
+            --naranja-oscuro: #F57C00;
+            --amarillo: #FFEB3B;
+            --verde-pizarron: #2E5233;
+            --blanco: #FFFFFF;
+            --madera: #5D4037;
+            --verde-ok: #4CAF50;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(135deg, var(--naranja-claro), var(--amarillo));
+            color: #333;
+        }
+
+        header {
+            background: var(--blanco);
+            padding: 1rem 3%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .buho-icon {
+            position: relative;
+            font-size: 30px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .birrete {
+            position: absolute;
+            top: -10px;
+            font-size: 18px;
+            left: 50%;
+            transform: translateX(-50%) rotate(-5deg);
+        }
+
+        .logo-texto {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-weight: 700;
+            font-size: clamp(1.1rem, 4vw, 1.6rem);
+            color: var(--naranja-oscuro);
+            margin: 0;
+            text-transform: none;
+        }
+
+        nav { display: flex; gap: 15px; }
+        nav a {
+            text-decoration: none !important;
+            color: var(--naranja-oscuro) !important;
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-weight: 700;
+            font-size: clamp(0.9rem, 3vw, 1.2rem);
+            transition: 0.3s;
+        }
+        nav a:hover { color: var(--verde-pizarron) !important; }
+
+        .hero {
+            min-height: 280px;
+            background-color: var(--verde-pizarron);
+            margin: 15px 5%;
+            border: 12px solid var(--madera);
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            box-shadow: inset 0 0 60px rgba(0,0,0,0.7);
+            text-align: center;
+            padding: 15px;
+        }
+
+        .chalk-text {
+            font-family: 'Kalam', cursive;
+            font-size: clamp(1.8rem, 6vw, 4rem);
+            color: rgba(255, 255, 255, 0.95);
+            white-space: nowrap;
+            overflow: hidden;
+            width: 0;
+            border-right: 4px solid transparent;
+            animation: typing 4s steps(30) forwards, hideCursor 0s 4s forwards;
+            margin: 0 auto;
+        }
+
+        @keyframes typing { from { width: 0; } to { width: 100%; } }
+        @keyframes hideCursor { to { border-color: transparent; } }
+
+        .flags-container {
+            text-align: center;
+            padding: 20px;
+            background: rgba(255,255,255,0.2);
+        }
+
+        .flag {
+            font-size: 2.8rem;
+            margin: 0 10px;
+            cursor: pointer;
+            transition: 0.3s;
+            display: inline-block;
+        }
+        .flag:hover { transform: scale(1.3); }
+
+        .grid-servicios {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center; 
+            gap: 25px;
+            padding: 30px 5%;
+        }
+
+        .card {
+            background: var(--blanco);
+            padding: 25px;
+            width: 280px;
+            border-radius: 18px;
+            text-align: center;
+            transition: 0.4s;
+            border-bottom: 6px solid var(--naranja-oscuro);
+        }
+
+        .card h3 {
+            transition: color 0.4s;
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            margin-bottom: 8px;
+            font-size: 1.5rem;
+        }
+
+        .card:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
+        .card:hover h3 { color: var(--naranja-oscuro); }
+        
+        .card.especial { border-bottom-color: var(--verde-ok); }
+        .card.especial:hover h3 { color: var(--verde-ok); }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 30px auto;
+            background: var(--blanco);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 15px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+        }
+
+        .btn-submit {
+            background: var(--naranja-oscuro);
+            color: white;
+            border: none;
+            padding: 18px;
+            width: 100%;
+            border-radius: 8px;
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-weight: 700;
+            font-size: 1.3rem;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .btn-submit:hover { background: var(--verde-pizarron); }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            background: #1a1a1a;
+            color: #ddd;
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo-container">
+        <div class="buho-icon">
+            <span class="birrete">🎓</span>
+            <span>🦉</span>
+            <span style="position:absolute; bottom:-6px; font-size:12px;">📚</span>
+        </div>
+        <h1 class="logo-texto">Cultural Study Time</h1>
+    </div>
+    <nav>
+        <a href="#cursos">Cursos</a>
+        <a href="#contacto">Contacto</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <div class="chalk-text">Cultural Study Time</div>
+    <p style="color: var(--amarillo); font-family: 'Kalam'; font-size: 1.4rem; margin-top:10px;">Excelencia Políglota</p>
+</section>
+
+<div class="flags-container">
+    <span class="flag" onclick="mostrarFrase('Good day! British Excellence.')">🇬🇧</span>
+    <span class="flag" onclick="mostrarFrase('Hi! American English for all.')">🇺🇸</span>
+    <span class="flag" onclick="mostrarFrase('Bienvenue! Apprenez le français.')">🇫🇷</span>
+    <span class="flag" onclick="mostrarFrase('Benvenuti! La lingua del bel canto.')">🇮🇹</span>
+    <span class="flag" onclick="mostrarFrase('Bem-vindo! Português do Brasil.')">🇧🇷</span>
+    <div id="frase-dinamica" style="margin-top:10px; font-weight:bold; color:var(--verde-pizarron); min-height:25px;">Elegí un idioma</div>
+</div>
+
+<div class="grid-servicios" id="cursos">
+    <div class="card"><h3>Niños</h3><p>Aprendizaje lúdico y creativo.</p></div>
+    <div class="card"><h3>Adolescentes</h3><p>Apoyo y niveles (A1-C2).</p></div>
+    <div class="card"><h3>Adultos</h3><p>Capacitación y Conversación.</p></div>
+    <div class="card"><h3>Inglés Laboral</h3><p>Formación para el trabajo.</p></div>
+    <div class="card"><h3>Turismo</h3><p>Viajes y hotelería.</p></div>
+    <div class="card"><h3>Traducciones</h3><p>Literarias y Jurídicas.</p></div>
+    <div class="card especial">
+        <h3>Exámenes Internacionales</h3>
+        <p>Certificaciones según MCER.</p>
+    </div>
+</div>
+
+<section class="contact-form" id="contacto">
+    <div id="f-box">
+        <h2 style="font-family: 'Playfair Display', serif; color: var(--naranja-oscuro); margin-top:0; font-style: italic;">Consultas</h2>
+        <input type="text" placeholder="Nombre completo">
+        <input type="email" placeholder="Correo electrónico">
+        <textarea rows="5" placeholder="¿En qué curso estás interesado/a?"></textarea>
+        <button class="btn-submit" onclick="enviarSim()">Enviar Consulta</button>
+    </div>
+    <div id="s-box" style="display:none; padding: 40px;">
+        <span style="font-size: 5rem; color: var(--verde-ok);">✓</span>
+        <h2 style="color: var(--verde-ok); font-family: 'Playfair Display', serif; font-style: italic;">¡Enviado!</h2>
+        <p>Nos contactaremos a la brevedad.</p>
+    </div>
+</section>
+
+<footer>
+    <p>Cultural Study Time - Avellaneda, Buenos Aires</p>
+    <p>© 2023 | Derechos Reservados</p>
+</footer>
+
+<script>
+    function mostrarFrase(m) {
+        document.getElementById('frase-dinamica').innerText = m;
+    }
+    function enviarSim() {
+        document.getElementById('f-box').style.display = 'none';
+        document.getElementById('s-box').style.display = 'block';
+    }
+</script>
+
+</body>
+</html>
+
+  
