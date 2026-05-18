@@ -2,11 +2,7 @@
 Sitio Web Educativo y de Gestión de Contenidos desarrollado de forma profesional para el proyecto Cultural de la Editorial Lanús. Plataforma enfocada en el aprendizaje multimedia de idiomas (2023).
 
 
-# Cultural-StudiTime 🌍📚
-
-Sitio Web Educativo y de Gestión de Contenidos desarrollado de forma profesional para el proyecto Cultural de la Editorial Lanús. Plataforma enfocada en el aprendizaje multimedia de idiomas (2023).
-
-# Cultural - StudiTime 🎓✨
+# Cultural-StudyTime 🌍📚
 
 Plataforma multimedia orientada al aprendizaje interactivo de idiomas y difusión de material educativo exclusivo.
 
